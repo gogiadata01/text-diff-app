@@ -1,24 +1,24 @@
+import React, { useState, useMemo } from 'react';
 import Sidebar from './components/sidebar/Sidebar';
 import MainContent from './maincontent/MainContent';
-import React, { useState, useMemo } from 'react';
-import { diffChars } from 'diff';
+import { calculateDiff } from './utils/diffUtils';
 import './App.css';
 
 function App() {
-  //  State-ები 
-  const [oldText, setOldText] = useState('');
+ const [oldText, setOldText] = useState('');
   const [newText, setNewText] = useState('');
   const [showDiff, setShowDiff] = useState(false);
 
-  // ტექსტის გასუფთავების ფუნქცია...
+  // 2. ვიყენებთ calculateDiff-ს useMemo-ს შიგნით
+  const allChanges = useMemo(() => {
+    return calculateDiff(oldText, newText);
+  }, [oldText, newText]);
+
   const handleClear = () => {
     setOldText('');
     setNewText('');
     setShowDiff(false);
   };
-
-  //  useMemo-ს გამოყენება ოპტიმიზაციისთვის (რომ ყოველ რენდერზე არ გადაითვალოს, თუ ტექსტი არ შეიცვალა)
-  const allChanges = useMemo(() => diffChars(oldText, newText), [oldText, newText]);
  
 
   return (
@@ -26,10 +26,10 @@ function App() {
       
       {/*  აქ ვიძახებ კომპონენტს */}
       <Sidebar /> 
-      
 
-      {/* აქ ვიძახებ მთავარ კონტენტს და ვატანთ "ინსტრუმენტებს" */}
+      {/* აქ ვიძახებ მთავარ კონტენტს და ვატან ინსტრუმენტებს */}
       <MainContent 
+
         oldText={oldText}
         setOldText={setOldText}
         newText={newText}

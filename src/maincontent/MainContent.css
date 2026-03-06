@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 
-/* Input Grid */
+/* input Grid */
 .input-grid {
   display: grid;
   grid-template-columns: 1fr 40px 1fr;
@@ -139,7 +139,7 @@ textarea {
   color: #116329;
 }
 
-/* Media Queries Responsive */
+/* media queries Responsive */
 @media (max-width: 768px) {
   .app-layout {
     flex-direction: column;
