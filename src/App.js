@@ -9,7 +9,7 @@ function App() {
   const [newText, setNewText] = useState('');
   const [showDiff, setShowDiff] = useState(false);
 
-  // 2. ვიყენებთ calculateDiff-ს useMemo-ს შიგნით
+  // 2. ვიყენებ calculateDiff-ს useMemo-ს შიგნით
   const allChanges = useMemo(() => {
     return calculateDiff(oldText, newText);
   }, [oldText, newText]);
