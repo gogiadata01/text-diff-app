@@ -24,7 +24,7 @@ const MainContent = ({
             <input type="checkbox" /> ფორმატის შენარჩუნება
           </label>
         </div>
-        <button className="new-file-btn" onClick={handleClear}>
+        <button className="new-file-btn">
           ⊕ ახლის გახსნა
         </button>
       </header>

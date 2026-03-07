@@ -5,7 +5,7 @@ import { calculateDiff } from './utils/diffUtils';
 import './App.css';
 
 function App() {
- const [oldText, setOldText] = useState('');
+  const [oldText, setOldText] = useState('');
   const [newText, setNewText] = useState('');
   const [showDiff, setShowDiff] = useState(false);
 
