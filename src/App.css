@@ -12,4 +12,10 @@ body {
 .app-layout {
   display: flex;
   height: 100vh;
+  
 }
+ @media (max-width: 968px) {
+  .app-layout {
+    flex-direction: column;
+  }
+ }

@@ -14,8 +14,13 @@ const MainContent = ({
 }) => {
   return (
     <main className="main-content">
-      {/*  ზედა პანელი */}
+      {/*  ზედა პანელი ტექსტი */}
       <header className="top-bar">
+       <div className="page-title-area mobile-only-title">
+        <span className="title-icon">Aa</span> 
+         <h2>ტექსტის შედარება</h2>
+        <span className="dropdown-arrow"></span>
+       </div>
         <div className="left-controls">
           <select className="lang-select">
             <option>ქართული</option>
